@@ -1,0 +1,58 @@
+﻿@using Hackerspace.Shared.Interfaces
+@using Hackerspace.Shared.Models
+@page "/todos"
+
+<h3>ToDosPage</h3>
+
+@inject IToDoService todoService
+
+<h3>ToDosPage</h3>
+@if (todos == null)
+{
+    <p>...loading</p>
+}
+else
+{
+    <ul>
+        @foreach (var todo in todos)
+        {
+            <li>
+                <p>@todo.Id</p>
+                <p>@todo.Title</p>
+                <p>@todo.Description</p>
+                <p>@todo.CreateDate</p>
+                <p>@todo.Complete</p>
+                <p>@todo.CloseDate</p>
+                <p>@todo.Notes</p>
+                <button type="button" @onclick="(()=>SelectTodo(todo))">Select</button>
+            </li>
+
+        }
+    </ul>
+
+    <!--Detail View-->
+    <p>Id: @todo.Id</p>
+    <p>Title: <input type="text" value="@todo.Title" /></p>
+    <p>Description: <input type="text" value="@todo.Description" /></p>
+    <p>Create Data: <input type="text" value="@todo.CreateDate" /></p>
+    <p>Complete: <input type="text" value="@todo.Complete" /></p>
+    <p>Close Date: <input type="text" value="@todo.CloseDate" /></p>
+    <p>Notes: <input type="text" value="@todo.Notes" /></p>
+
+}
+
+@code {
+    protected ToDo todo=new ToDo();
+    protected List<ToDo> todos;
+
+    protected async override Task OnInitializedAsync()
+    {
+        todos = todoService.GetAll();
+        await base.OnInitializedAsync();
+    }
+
+    protected void SelectTodo(ToDo todo)
+    {
+        this.todo = todo;
+    }
+}

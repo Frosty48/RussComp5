@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Data.csproj" />
+    <ProjectReference Include="..\..\Hackerspace.Shared\Hackerspace.Shared.csproj" />
+    <ProjectReference Include="..\RussComp5.Client\RussComp5.Client.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataFolder\" />
+  </ItemGroup>
+
+</Project>
