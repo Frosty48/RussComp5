@@ -8,11 +8,11 @@ namespace Data.Migrations
 
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            //throw new NotImplementedException();
+            throw new NotImplementedException();
         }
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            //base.Down(migrationBuilder);
+            base.Down(migrationBuilder);
         }
 
     }
