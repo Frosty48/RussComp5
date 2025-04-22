@@ -3,10 +3,13 @@ using Hackerspace.Shared.Models;
 
 namespace RussComp5.Data.Mocks
 {
+
     public class BadgesPageServiceMock : IBadgesPageDataService
     {
+
         private List<Badge> _badges = new List<Badge>()
         {
+
             new Badge
             {
                 Id = Guid.NewGuid(),
@@ -15,6 +18,7 @@ namespace RussComp5.Data.Mocks
                 TurnInInstructions = "Submit your course completion certificate.",
                 IsVisible = true
             },
+
             new Badge
             {
                 Id = Guid.NewGuid(),
@@ -23,6 +27,7 @@ namespace RussComp5.Data.Mocks
                 TurnInInstructions = "Submit a report on your security project.",
                 IsVisible = false
             },
+
             new Badge
             {
                 Id = Guid.NewGuid(),
@@ -31,6 +36,7 @@ namespace RussComp5.Data.Mocks
                 TurnInInstructions = "Submit your GitHub profile link.",
                 IsVisible = true
             },
+
             new Badge
             {
                 Id = Guid.NewGuid(),
@@ -39,6 +45,7 @@ namespace RussComp5.Data.Mocks
                 TurnInInstructions = "Submit your bug report.",
                 IsVisible = false
             },
+
             new Badge
             {
                 Id = Guid.NewGuid(),
@@ -47,12 +54,14 @@ namespace RussComp5.Data.Mocks
                 TurnInInstructions = "Submit testimonials from community members.",
                 IsVisible = true
             }
-        };
 
+        };
 
         public Task<List<Badge>> GetAllAsync()
         {
             return Task.FromResult(_badges);
         }
+
     }
+
 }
